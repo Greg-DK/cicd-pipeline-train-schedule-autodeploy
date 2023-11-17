@@ -69,8 +69,7 @@ pipeline {
                           }
                       }
                     }
-              }
-        }      
+              }      
         stage('DeployToProduction') {
             when {
                 branch 'master'
@@ -84,6 +83,7 @@ pipeline {
                 )
             }
         }
+    }
     post {
         cleanup {
              kubernetesDeploy(
